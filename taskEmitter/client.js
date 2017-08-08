@@ -15,6 +15,6 @@ server.on('response', res => {
 })
 
 readline.on('line', input => {
-  const args = input.split(' ')
-  client.emit('command', args[0], ...input);
+  [command, ...args] = input.split(' ')
+  client.emit('command', command, args.join(' ').trim() );
 });
