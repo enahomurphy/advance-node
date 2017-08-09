@@ -21,7 +21,6 @@ function middleware(req, res, next) {
 }
 
 function controller(req, res) {
-
     console.log(req.decoded)
 }
 app.get('/books', middleware, controller)
